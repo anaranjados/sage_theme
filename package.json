@@ -19,7 +19,12 @@
   },
   "devDependencies": {
     "@roots/bud": "5.8.7",
-    "@roots/bud-tailwindcss": "5.8.7",
+    "@roots/bud-sass": "^5.8.7",
     "@roots/sage": "5.8.7"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
+    "media-typer": "^1.1.0",
+    "popper.js": "^1.16.1"
   }
 }

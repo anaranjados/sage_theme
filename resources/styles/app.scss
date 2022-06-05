@@ -1,0 +1,52 @@
+@import "bootstrap";
+$green: #2a5f2a;
+
+#app {
+   margin: 10vh auto;
+}
+
+body {
+   height: 100vh;
+   background-color: coral;
+   color: #133960;
+}
+
+a {
+   text-decoration: underline dotted;
+   &, &:hover {
+      color: $green;
+   }
+}
+
+.atcl-meta {
+   justify-items: right;
+   display: grid;
+}
+
+.type-post {
+   border: 2px dashed $green;
+   padding: 1rem;
+   hr {
+      margin: 5vh auto;
+      border-width: 2px;
+   }
+   figure {
+      cursor: pointer;
+   }
+   #popup {
+      position: fixed;
+      background-color: grey;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.9;
+      img {
+         margin: 25vh 35vw
+      }
+      span {
+         position: absolute;
+         right: 1rem;
+         top: 1rem
+      }
+   }
+}
