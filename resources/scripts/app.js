@@ -10,6 +10,22 @@ const main = async (err) => {
   }
 
   // application code
+   const pop = document.getElementById('popup'),
+         pic = document.querySelectorAll('#gallery img');
+   if (pop) {
+      for(let i of pic) {
+         i.addEventListener('click', (e)=>{
+            const n = e.target.cloneNode(true);
+            n.setAttribute('id', 'insertion');
+            pop.removeAttribute('hidden');
+            pop.appendChild( n );
+         })
+      }
+      pop.addEventListener('click', (e)=>{
+         pop.setAttribute('hidden','');
+         pop.removeChild( document.getElementById('insertion') );
+      })
+   }
 };
 
 /**
@@ -22,20 +38,3 @@ import.meta.webpackHot?.accept(main);
 
 
 import 'bootstrap';
-
-document.addEventListener('DOMContentLoaded', ()=> {
-   const pop = document.getElementById('popup'),
-         pic = document.querySelectorAll('#gallery img')
-   for(i of pic) {
-      i.addEventListener('click', (e)=>{
-         const n = e.target.cloneNode(true)
-         n.setAttribute('id', 'insertion')
-         pop.removeAttribute('hidden')
-         pop.appendChild( n )
-      })
-   }
-   pop.addEventListener('click', (e)=>{
-      pop.setAttribute('hidden','')
-      pop.removeChild( document.getElementById('insertion') )
-   })
-})

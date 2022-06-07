@@ -77,3 +77,62 @@ collect(['setup', 'filters'])
 */
 
 add_theme_support('sage');
+
+
+add_action( 'init', 'own_post_type' );
+function own_post_type() {
+
+   register_taxonomy( 'articles_cat', 'articles', [
+		'labels'             => ['name'=>'Рубрики статей', 'singular_name'=> 'Рубрика статьи'],
+		'public'             => true,
+		'show_in_rest'       => true, 
+		'show_admin_column'  => true,
+	] );
+
+	register_taxonomy( 'portafolio_cat', 'portafolio', [
+		'labels'             => ['name'=>'Рубрики портфолио', 'singular_name'=>'Рубрика портфолио'],
+		'public'             => true,
+      'show_in_rest'       => true, 
+		'show_admin_column'  => true,
+	] );
+
+	register_post_type( 'articles', [
+		'labels' => [
+			'name'              => 'Статьи',
+			'singular_name'     => 'Статья',
+         'add_new'           => 'Добавить статью',
+         'add_new_item'      => 'Добавить статью',
+         'new_item'          => 'Текст новой статьи',
+         'view_item'         => 'Просмотр статьи',
+         'menu_name'         => 'Мои статьи'
+		],
+		'public'               => true,
+		'map_meta_cap'         => true,
+      'show_in_rest'         => true,
+      'supports'             => ['title', 'editor', 'thumbnail'],
+ 		'taxonomies'           => ['articles_cat'],
+      'menu_icon'            => 'dashicons-carrot',
+      'menu_position'        => 101
+	] );
+   
+   register_post_type( 'portafolio', [
+      'labels' => [
+			'name'              => 'Портфолио',
+			'singular_name'     => 'Портфолио',
+         'add_new'           => 'Добавить в портфолио',
+         'add_new_item'      => 'Добавить в портфолио',
+         'new_item'          => 'Текст новой записи для портфолио',
+         'view_item'         => 'Просмотр записи портфолио',
+         'menu_name'         => 'Моё портфолио',
+		],
+		'public'               => true,
+		'map_meta_cap'         => true,
+      'show_in_rest'         => true,
+      'supports'             => ['title', 'editor', 'thumbnail'],
+		'taxonomies'           => ['portafolio_cat'],
+      'menu_icon'            => 'dashicons-palmtree',
+      'menu_position'        => 102
+	] );
+
+   register_taxonomy_for_object_type('post_tag', 'articles');
+}

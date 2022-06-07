@@ -1,6 +1,6 @@
 {{--
-  Template Name: Proenza article
-  Template Post Type: post
+  Template Name: Proenza portafolio
+  Template Post Type: portafolio
 --}}
 
 @extends('layouts.app')
@@ -11,7 +11,7 @@
       @include('partials.page-header')   
       <div class="row justify-content-center">
          <div class="mb-5">
-            @include('partials.pr_article')
+            @include('partials.pr_portfolio_cpt')
          </div>
       </div>
 @endwhile

@@ -4,7 +4,7 @@
             @php(the_excerpt())
       </h5>   
       <div class="col-4 atcl-meta">
-         @include('partials.pr_tags-time-img_meta')
+         @include('partials.pr_article_tags-time-img-cat')
       </div>
    </div>
 </article>
