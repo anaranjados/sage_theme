@@ -34,22 +34,18 @@ body {
             top: 1rem;
          }
       }
-      
       hr {
          margin: 5vh auto;
          border-width: 2px;
-      }
-      
+      }  
       #popup span, figure { cursor: pointer }
-
-      &, .articles {
-         border: 2px dashed $green;
-         padding: 1rem;
-         .atcl-meta {
-            justify-items: right;
-            display: grid;
-         }
-         
-      }
+   }
+   .hentry {
+      border: 2px dashed $green;
+      padding: 1rem;         
+   }
+   .atcl-meta {
+      justify-items: right;
+      display: grid;
    }
 }
